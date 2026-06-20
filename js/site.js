@@ -29,7 +29,7 @@ contactsform.addEventListener("submit", function (e) {
     e.preventDefault();
 });
 
-document.getElementById("listTb").addEventListener("click", (e) => {
+listTb.addEventListener("click", (e) => {
     let target = e.target.closest("button");
 
     if (target === null) {
@@ -67,7 +67,7 @@ clearDatabtn.onclick = (e) => {
     }
 };
 
-document.getElementById("dropDBbtn").addEventListener("click", (e) => {
+dropDBbtn.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
 
@@ -268,7 +268,7 @@ function createAndUpdate(e) {
 }
 
 function contactsList(find, findvalue) {
-    let ulist = document.getElementById("listTb");
+    let ulist = listTb;
 
     if (db === null) {
         ulist.innerHTML = "<caption>資料庫尚未開啟</caption>";
@@ -345,7 +345,7 @@ function readData() {
 }
 
 function contactsFilter(conditions) {
-    let ulist = document.getElementById("listTb");
+    let ulist = listTb;
 
     if (db === null) {
         ulist.innerHTML = "<caption>資料庫尚未開啟</caption>";
@@ -382,7 +382,7 @@ function contactsFilter(conditions) {
 }
 
 function renderContactsList(records) {
-    let ulist = document.getElementById("listTb");
+    let ulist = listTb;
 
     //使用map和join方法合併字串
     let contents = records.map((obj) => {
@@ -500,14 +500,14 @@ function dropDB() {
 }
 
 function showMessage(m) {
-    document.getElementById("msg").innerHTML = m;
+    msg.innerHTML = m;
 
     if (messageTimer !== null) {
         clearTimeout(messageTimer);
     }
 
     messageTimer = setTimeout(() => {
-        document.getElementById("msg").innerHTML = "";
+        msg.innerHTML = "";
     }, 2000);
 }
 
