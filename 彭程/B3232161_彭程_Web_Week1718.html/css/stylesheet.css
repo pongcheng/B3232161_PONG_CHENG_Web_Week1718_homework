@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f4f4f4;
+    color: #222;
+    font-family: Arial, "Microsoft JhengHei", sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.sprite {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background-color: transparent;
+    background-image: url("../spritesheet.png");
+    background-repeat: no-repeat;
+}
+
+.sprite-add {
+    background-position: -5px -5px;
+}
+
+.sprite-del {
+    background-position: -47px -5px;
+}
+
+.sprite-edit {
+    background-position: -5px -47px;
+}
+
+.sprite-search {
+    background-position: -47px -47px;
+}
+
+#container {
+    position: relative;
+    width: 720px;
+    min-height: 520px;
+    margin: 40px auto;
+    padding: 48px 34px 34px;
+    border: 5px solid #222;
+    border-radius: 16px;
+    background: #fff;
+}
+
+#container h1 {
+    position: absolute;
+    top: -31px;
+    left: 28px;
+    margin: 0;
+    padding: 8px 22px;
+    border-radius: 7px;
+    background: #333;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+#topBtn {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+#topBtn button,
+#buttonBar button {
+    min-width: 128px;
+    min-height: 42px;
+    padding: 8px 18px;
+    border: 0;
+    border-radius: 7px;
+    background: linear-gradient(#9d9d9d, #646464);
+    color: #fff;
+    font-weight: 700;
+}
+
+#toolBtn {
+    position: absolute;
+    top: 56px;
+    right: 34px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#showJob {
+    margin: 0 0 12px;
+    font-size: 22px;
+    letter-spacing: 0;
+}
+
+#msg {
+    min-height: 24px;
+    margin: 0 0 8px;
+    color: #4b4b4b;
+    font-size: 16px;
+}
+
+#contactsform {
+    margin-bottom: 26px;
+}
+
+#contactsform p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 6px 0;
+}
+
+#contactsform label {
+    width: 64px;
+    flex: 0 0 64px;
+    font-weight: 700;
+    text-align: right;
+}
+
+#contactsform .telLabel {
+    margin-left: 26px;
+}
+
+#contactsform input[type="text"],
+#contactsform input[type="date"] {
+    height: 31px;
+    border: 2px solid #555;
+    background: #fff;
+}
+
+#name,
+#tel {
+    width: 190px;
+}
+
+#address,
+#email,
+#memo {
+    width: 558px;
+}
+
+#findDate input[type="date"] {
+    width: 158px;
+}
+
+#putbtn,
+#findbtn,
+#findDate {
+    display: none;
+}
+
+#buttonBar {
+    gap: 10px;
+    margin-top: 16px;
+    padding-left: 4px;
+}
+
+#listTb {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 26px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#listTb caption {
+    padding: 12px;
+    border: 2px solid #555;
+    border-bottom: 0;
+    font-weight: 700;
+}
+
+#listTb th,
+#listTb td {
+    padding: 8px 5px;
+    border: 2px solid #555;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+#listTb th {
+    background: #dedede;
+}
+
+#listTb tbody tr:nth-child(even) {
+    background: #f1f1f1;
+}
+
+#listTb th:nth-child(1),
+#listTb td:nth-child(1) {
+    width: 11%;
+}
+
+#listTb th:nth-child(2),
+#listTb td:nth-child(2) {
+    width: 16%;
+}
+
+#listTb th:nth-child(3),
+#listTb td:nth-child(3) {
+    width: 13%;
+}
+
+#listTb th:nth-child(4),
+#listTb td:nth-child(4) {
+    width: 23%;
+}
+
+#listTb th:nth-child(5),
+#listTb td:nth-child(5) {
+    width: 9%;
+}
+
+#listTb th:nth-child(6),
+#listTb td:nth-child(6) {
+    width: 16%;
+}
+
+#listTb th:nth-child(7),
+#listTb td:nth-child(7) {
+    width: 12%;
+    white-space: nowrap;
+}
+
+.smallBtn {
+    padding: 0;
+    vertical-align: middle;
+}
+
+.smallBtn + .smallBtn {
+    margin-left: 4px;
+}
+
+@media (max-width: 760px) {
+    #container {
+        width: calc(100% - 20px);
+        margin: 34px auto 16px;
+        padding: 46px 14px 24px;
+    }
+
+    #toolBtn {
+        right: 16px;
+    }
+
+    #topBtn {
+        flex-wrap: wrap;
+    }
+
+    #contactsform p {
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+
+    #contactsform label {
+        width: 64px;
+        flex-basis: 64px;
+    }
+
+    #contactsform .telLabel {
+        margin-left: 0;
+    }
+
+    #address,
+    #email,
+    #memo {
+        width: calc(100% - 76px);
+    }
+
+    #listTb {
+        font-size: 13px;
+    }
+}
